@@ -1,71 +1,176 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Riesgos de ciberseguridad · Fundación Secretos para Contar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.">
+  <title>Riesgos de Ciberseguridad · Fundación Secretos para Contar</title>
 
-  <!-- Tipografías de Google -->
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&family=Fraunces:ital,opsz,wght@0,9..144,500..800;1,9..144,500..800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Pro / Free Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
   <!-- Hoja de estilos externa -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="app-wrapper">
-    <header class="site-header">
+    <!-- Barra de Navegación SaaS Moderna -->
+    <header class="site-header" id="site-header">
       <div class="header-inner">
-        <div class="header-copy">
-          <h1 class="header-title">Riesgos de ciberseguridad detectados y cómo protegernos</h1>
-          <p class="header-subtitle">Basado en la auditoría técnica de la Fundación Secretos para Contar</p>
-          <p class="header-intro">Esta guía convierte la evaluación interna de nuestros sistemas en decisiones prácticas para proteger nuestras cuentas, correos e información institucional y personal.</p>
+        <div class="brand-group">
+          <div class="brand-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div class="brand-text">
+            <span class="brand-org">Fundación Secretos para Contar</span>
+            <span class="brand-product">Security Intelligence Center</span>
+          </div>
         </div>
-        <img class="header-photo" loading="lazy" src="https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="Protección digital">
+        
+        <div class="header-actions">
+          <button type="button" class="theme-toggle-btn" id="theme-toggle" aria-label="Cambiar modo oscuro/claro" title="Cambiar tema">
+            <i class="fa-solid fa-moon icon-moon"></i>
+            <i class="fa-solid fa-sun icon-sun"></i>
+          </button>
+          <a href="#diagnostico-forms" class="nav-cta-btn">
+            <i class="fa-solid fa-clipboard-check"></i> Ir al Diagnóstico
+          </a>
+        </div>
       </div>
     </header>
 
-    <main>
+    <!-- Hero Section de Alto Impacto -->
+    <section class="hero-section">
+      <div class="hero-ambient-glow"></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="hero-badge">
+            <i class="fa-solid fa-lock-keyhole"></i> Auditoría Técnica M365 &middot; SCUBA CISA
+          </div>
+          <h1 class="hero-title">Riesgos de ciberseguridad detectados y cómo protegernos</h1>
+          <p class="hero-subtitle">Plataforma oficial de capacitación y gobernanza digital de la Fundación Secretos para Contar.</p>
+          <p class="hero-intro">Esta guía convierte la evaluación interna de nuestros sistemas en decisiones prácticas para blindar nuestras cuentas, correos e información institucional y personal frente a amenazas actuales.</p>
+          
+          <div class="hero-btn-group">
+            <a href="#metricas-section" class="btn-primary-tech">
+              <i class="fa-solid fa-chart-pie"></i> Ver Resultados
+            </a>
+            <a href="#conceptos-section" class="btn-secondary-tech">
+              <i class="fa-solid fa-book-open"></i> Explorar Conceptos
+            </a>
+          </div>
+        </div>
+        
+        <div class="hero-visual-card">
+          <div class="hero-card-header">
+            <div class="window-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="window-title"><i class="fa-solid fa-shield-dog"></i> Microsoft Defender Status</span>
+          </div>
+          <div class="hero-card-body">
+            <div class="status-badge-live">
+              <span class="pulse-dot"></span> Tenant Protegido &middot; Monitoreo Activo
+            </div>
+            <div class="metric-mini-row">
+              <div class="mini-stat">
+                <span class="val">97</span>
+                <span class="lbl">Controles</span>
+              </div>
+              <div class="mini-stat warning">
+                <span class="val">39</span>
+                <span class="lbl">Críticos</span>
+              </div>
+              <div class="mini-stat success">
+                <span class="val">100%</span>
+                <span class="lbl">Compromiso</span>
+              </div>
+            </div>
+            <div class="shield-graphic-banner">
+              <i class="fa-solid fa-cloud-shield"></i>
+              <span>Entra ID &bull; Exchange &bull; SharePoint</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="main-content">
       <!-- Introducción con Métricas de la Auditoría Interactivas -->
-      <section>
+      <section id="metricas-section" class="content-section">
         <div class="section-inner">
-          <h2 class="section-title">Resultados del diagnóstico preventivo</h2>
-          <p class="section-lead">Revisamos 97 controles de seguridad en nuestra infraestructura corporativa de Microsoft 365. <strong>Haz clic en cualquier cuadro para conocer qué significa y qué hallamos:</strong></p>
+          <div class="section-header-centered">
+            <span class="section-tag"><i class="fa-solid fa-stethoscope"></i> Diagnóstico Preventivo</span>
+            <h2 class="section-title">Resultados de la auditoría de infraestructura</h2>
+            <p class="section-lead">Revisamos 97 controles de seguridad en nuestra infraestructura corporativa de Microsoft 365. <strong>Haz clic en cualquier cuadro para conocer qué significa y qué hallamos:</strong></p>
+          </div>
 
           <!-- Panel de Métricas Generales (Botones interactivos) -->
           <div class="metrics-bar">
             <button type="button" class="metric-card" data-metric="controles">
-              <div class="metric-value navy">97</div>
-              <div class="metric-label">Controles Auditados</div>
-              <span class="metric-hint">Ver detalle ▾</span>
+              <div class="metric-icon-wrap navy">
+                <i class="fa-solid fa-clipboard-list-check"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-value navy">97</div>
+                <div class="metric-label">Controles Auditados</div>
+              </div>
+              <span class="metric-hint">Ver detalle <i class="fa-solid fa-chevron-down"></i></span>
             </button>
+
             <button type="button" class="metric-card" data-metric="fallos">
-              <div class="metric-value red">39</div>
-              <div class="metric-label">Fallos Críticos</div>
-              <span class="metric-hint">Ver detalle ▾</span>
+              <div class="metric-icon-wrap red">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-value red">39</div>
+                <div class="metric-label">Fallos Críticos</div>
+              </div>
+              <span class="metric-hint">Ver detalle <i class="fa-solid fa-chevron-down"></i></span>
             </button>
+
             <button type="button" class="metric-card" data-metric="advertencias">
-              <div class="metric-value yellow">15</div>
-              <div class="metric-label">Advertencias</div>
-              <span class="metric-hint">Ver detalle ▾</span>
+              <div class="metric-icon-wrap yellow">
+                <i class="fa-solid fa-circle-exclamation"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-value yellow">15</div>
+                <div class="metric-label">Advertencias</div>
+              </div>
+              <span class="metric-hint">Ver detalle <i class="fa-solid fa-chevron-down"></i></span>
             </button>
+
             <button type="button" class="metric-card" data-metric="areas">
-              <div class="metric-value blue">4</div>
-              <div class="metric-label">Áreas Analizadas</div>
-              <span class="metric-hint">Ver detalle ▾</span>
+              <div class="metric-icon-wrap blue">
+                <i class="fa-solid fa-network-wired"></i>
+              </div>
+              <div class="metric-content">
+                <div class="metric-value blue">4</div>
+                <div class="metric-label">Áreas Analizadas</div>
+              </div>
+              <span class="metric-hint">Ver detalle <i class="fa-solid fa-chevron-down"></i></span>
             </button>
           </div>
 
           <!-- Panel desplegable interactivo de detalle de métricas -->
-          <div id="metric-detail-panel" class="metric-detail-panel" style="display:none;">
-            <button type="button" class="metric-detail-close" id="close-metric-detail" aria-label="Cerrar detalle">&times;</button>
+          <div id="metric-detail-panel" class="metric-detail-panel" style="display:none;" role="region" aria-label="Detalle de métrica">
+            <button type="button" class="metric-detail-close" id="close-metric-detail" aria-label="Cerrar detalle">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
             <h3 class="metric-detail-title" id="metric-detail-title"></h3>
             <div class="metric-detail-grid">
               <div class="metric-box concept">
-                <span class="block-label" style="color:var(--blue)">¿En qué consiste el concepto?</span>
+                <span class="block-label blue"><i class="fa-solid fa-circle-question"></i> ¿En qué consiste el concepto?</span>
                 <p id="metric-detail-concept"></p>
               </div>
               <div class="metric-box finding">
-                <span class="block-label" style="color:var(--green)">¿Qué se halló en la auditoría?</span>
+                <span class="block-label green"><i class="fa-solid fa-magnifying-glass-chart"></i> ¿Qué se halló en la auditoría?</span>
                 <p id="metric-detail-finding"></p>
               </div>
             </div>
@@ -73,17 +178,17 @@
 
           <div class="intro-grid">
             <article class="info-card">
-              <span class="icon-mark">⌕</span>
+              <div class="icon-mark blue"><i class="fa-solid fa-shield-halved"></i></div>
               <h3 class="card-heading">Auditoría en Microsoft 365</h3>
               <p class="card-copy">Se ha evaluado detalladamente la configuración técnica de las plataformas corporativas para verificar el nivel de protección frente a ciberataques actuales.</p>
             </article>
             <article class="info-card">
-              <span class="icon-mark">◎</span>
+              <div class="icon-mark warning"><i class="fa-solid fa-bug-slash"></i></div>
               <h3 class="card-heading">Vulnerabilidades encontradas</h3>
               <p class="card-copy">Se ha identificado brechas en el uso de contraseñas solas, permisos de aplicaciones web, enlaces de compartición pública e identidad de correo.</p>
             </article>
             <article class="info-card">
-              <span class="icon-mark">✓</span>
+              <div class="icon-mark success"><i class="fa-solid fa-bullseye"></i></div>
               <h3 class="card-heading">Objetivo del sitio</h3>
               <p class="card-copy">Traducir estos hallazgos en pautas claras y aplicables que cada colaborador debe asumir en su trabajo diario y en su vida personal.</p>
             </article>
@@ -92,36 +197,39 @@
       </section>
 
       <!-- Conceptos clave -->
-      <section class="concepts-section">
+      <section id="conceptos-section" class="concepts-section">
         <div class="section-inner">
-          <h2 class="section-title">Conceptos clave para entender los riesgos</h2>
-          <p class="section-lead">Haz clic en cada tarjeta para desplegar su definición ampliada y entender los términos de seguridad más importantes.</p>
+          <div class="section-header-centered">
+            <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Glosario Técnico</span>
+            <h2 class="section-title">Conceptos clave para entender los riesgos</h2>
+            <p class="section-lead">Haz clic en cada tarjeta para desplegar su definición ampliada y entender los términos de seguridad más importantes.</p>
+          </div>
           
           <div class="concept-grid">
             <!-- Tarjeta 1: MFA -->
             <article class="concept-card">
-              <button type="button" class="concept-toggle">
+              <button type="button" class="concept-toggle" aria-expanded="false">
                 <div class="concept-header-row">
-                  <span class="concept-icon">🔑</span>
+                  <div class="concept-icon"><i class="fa-solid fa-key"></i></div>
                   <span class="concept-badge">Identidad</span>
                 </div>
                 <h3 class="card-heading">MFA (Autenticación multifactor)</h3>
                 <div class="concept-toggle-action">
                   <span class="toggle-text">Ver definición y detalles</span>
-                  <span class="arrow-icon">▾</span>
+                  <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
                 </div>
                 <div class="card-copy">
-                  <div class="card-copy-inner" style="display: grid; gap: 12px; padding-top: 14px;">
-                    <div style="background: #F4F8FA; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--blue);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--blue); margin-bottom: 4px;">¿Qué es?</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">Mecanismo de seguridad que exige dos o más pruebas para iniciar sesión (tu contraseña habitual + un código o confirmación en la app de tu celular).</p>
+                  <div class="card-copy-inner">
+                    <div class="card-info-box blue-border">
+                      <strong class="box-title blue"><i class="fa-solid fa-circle-info"></i> ¿Qué es?</strong>
+                      <p>Mecanismo de seguridad que exige dos o más pruebas para iniciar sesión (tu contraseña habitual + un código o confirmación en la app de tu celular).</p>
                     </div>
-                    <div style="background: #EEF7F1; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--green);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--green); margin-bottom: 4px;">En la Fundación</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">Obligatorio en Microsoft 365 para evitar accesos no autorizados a correos y documentos institucionales.</p>
+                    <div class="card-info-box green-border">
+                      <strong class="box-title green"><i class="fa-solid fa-building"></i> En la Fundación</strong>
+                      <p>Obligatorio en Microsoft 365 para evitar accesos no autorizados a correos y documentos institucionales.</p>
                     </div>
-                    <div style="background: #FFFBEB; padding: 10px 14px; border-radius: 10px; border: 1px dashed #FCD34D;">
-                      <p style="margin: 0; font-size: 0.85rem; color: #92400E;">💡 <strong>Tip:</strong> Nunca apruebes notificaciones en tu app de autenticación si no estás intentando iniciar sesión en ese momento.</p>
+                    <div class="card-tip-box">
+                      <p><i class="fa-regular fa-lightbulb"></i> <strong>Tip:</strong> Nunca apruebes notificaciones en tu app de autenticación si no estás intentando iniciar sesión en ese momento.</p>
                     </div>
                   </div>
                 </div>
@@ -130,28 +238,28 @@
 
             <!-- Tarjeta 2: Conditional Access -->
             <article class="concept-card">
-              <button type="button" class="concept-toggle">
+              <button type="button" class="concept-toggle" aria-expanded="false">
                 <div class="concept-header-row">
-                  <span class="concept-icon">🛡️</span>
+                  <div class="concept-icon"><i class="fa-solid fa-shield-alt"></i></div>
                   <span class="concept-badge">Seguridad</span>
                 </div>
                 <h3 class="card-heading">Conditional Access (Acceso Condicional)</h3>
                 <div class="concept-toggle-action">
                   <span class="toggle-text">Ver definición y detalles</span>
-                  <span class="arrow-icon">▾</span>
+                  <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
                 </div>
                 <div class="card-copy">
-                  <div class="card-copy-inner" style="display: grid; gap: 12px; padding-top: 14px;">
-                    <div style="background: #F4F8FA; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--blue);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--blue); margin-bottom: 4px;">¿Qué es?</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">Reglas inteligentes de protección que analizan automáticamente dónde estás, en qué dispositivo te conectas y el nivel de riesgo antes de permitir el ingreso.</p>
+                  <div class="card-copy-inner">
+                    <div class="card-info-box blue-border">
+                      <strong class="box-title blue"><i class="fa-solid fa-circle-info"></i> ¿Qué es?</strong>
+                      <p>Reglas inteligentes de protección que analizan automáticamente dónde estás, en qué dispositivo te conectas y el nivel de riesgo antes de permitir el ingreso.</p>
                     </div>
-                    <div style="background: #EEF7F1; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--green);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--green); margin-bottom: 4px;">En la Fundación</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">Permite restringir inicios de sesión desde ubicaciones o dispositivos no confiables que comprometan la red corporativa.</p>
+                    <div class="card-info-box green-border">
+                      <strong class="box-title green"><i class="fa-solid fa-building"></i> En la Fundación</strong>
+                      <p>Permite restringir inicios de sesión desde ubicaciones o dispositivos no confiables que comprometan la red corporativa.</p>
                     </div>
-                    <div style="background: #FFFBEB; padding: 10px 14px; border-radius: 10px; border: 1px dashed #FCD34D;">
-                      <p style="margin: 0; font-size: 0.85rem; color: #92400E;">💡 <strong>Tip:</strong> Mantén actualizados tus dispositivos de trabajo y evita conectarte a redes Wi-Fi públicas sin una red segura.</p>
+                    <div class="card-tip-box">
+                      <p><i class="fa-regular fa-lightbulb"></i> <strong>Tip:</strong> Mantén actualizados tus dispositivos de trabajo y evita conectarte a redes Wi-Fi públicas sin una red segura.</p>
                     </div>
                   </div>
                 </div>
@@ -160,28 +268,28 @@
 
             <!-- Tarjeta 3: Global Administrator -->
             <article class="concept-card">
-              <button type="button" class="concept-toggle">
+              <button type="button" class="concept-toggle" aria-expanded="false">
                 <div class="concept-header-row">
-                  <span class="concept-icon">👑</span>
+                  <div class="concept-icon"><i class="fa-solid fa-crown"></i></div>
                   <span class="concept-badge">Permisos</span>
                 </div>
                 <h3 class="card-heading">Global Administrator (Administrador Global)</h3>
                 <div class="concept-toggle-action">
                   <span class="toggle-text">Ver definición y detalles</span>
-                  <span class="arrow-icon">▾</span>
+                  <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
                 </div>
                 <div class="card-copy">
-                  <div class="card-copy-inner" style="display: grid; gap: 12px; padding-top: 14px;">
-                    <div style="background: #F4F8FA; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--blue);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--blue); margin-bottom: 4px;">¿Qué es?</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">El nivel más alto de control en Microsoft 365. Posee la "llave maestra" para crear, modificar o eliminar cualquier dato o usuario.</p>
+                  <div class="card-copy-inner">
+                    <div class="card-info-box blue-border">
+                      <strong class="box-title blue"><i class="fa-solid fa-circle-info"></i> ¿Qué es?</strong>
+                      <p>El nivel más alto de control en Microsoft 365. Posee la "llave maestra" para crear, modificar o eliminar cualquier dato o usuario.</p>
                     </div>
-                    <div style="background: #EEF7F1; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--green);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--green); margin-bottom: 4px;">En la Fundación</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">Su uso debe estar estrictamente limitado y protegido bajo doble factor para evitar la toma de control del tenant.</p>
+                    <div class="card-info-box green-border">
+                      <strong class="box-title green"><i class="fa-solid fa-building"></i> En la Fundación</strong>
+                      <p>Su uso debe estar estrictamente limitado y protegido bajo doble factor para evitar la toma de control del tenant.</p>
                     </div>
-                    <div style="background: #FFFBEB; padding: 10px 14px; border-radius: 10px; border: 1px dashed #FCD34D;">
-                      <p style="margin: 0; font-size: 0.85rem; color: #92400E;">💡 <strong>Tip:</strong> Nunca utilices cuentas con privilegios globales para tareas cotidianas como navegación web o lectura de correos.</p>
+                    <div class="card-tip-box">
+                      <p><i class="fa-regular fa-lightbulb"></i> <strong>Tip:</strong> Nunca utilices cuentas con privilegios globales para tareas cotidianas como navegación web o lectura de correos.</p>
                     </div>
                   </div>
                 </div>
@@ -190,28 +298,28 @@
 
             <!-- Tarjeta 4: SPF, DKIM y DMARC -->
             <article class="concept-card">
-              <button type="button" class="concept-toggle">
+              <button type="button" class="concept-toggle" aria-expanded="false">
                 <div class="concept-header-row">
-                  <span class="concept-icon">✉️</span>
+                  <div class="concept-icon"><i class="fa-solid fa-envelope-circle-check"></i></div>
                   <span class="concept-badge">Correo</span>
                 </div>
                 <h3 class="card-heading">SPF, DKIM y DMARC</h3>
                 <div class="concept-toggle-action">
                   <span class="toggle-text">Ver definición y detalles</span>
-                  <span class="arrow-icon">▾</span>
+                  <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
                 </div>
                 <div class="card-copy">
-                  <div class="card-copy-inner" style="display: grid; gap: 12px; padding-top: 14px;">
-                    <div style="background: #F4F8FA; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--blue);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--blue); margin-bottom: 4px;">¿Qué es?</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">Trío de firmas y registros de seguridad en internet que certifican ante otros servidores que un correo enviado desde un dominio es legítimo.</p>
+                  <div class="card-copy-inner">
+                    <div class="card-info-box blue-border">
+                      <strong class="box-title blue"><i class="fa-solid fa-circle-info"></i> ¿Qué es?</strong>
+                      <p>Trío de firmas y registros de seguridad en internet que certifican ante otros servidores que un correo enviado desde un dominio es legítimo.</p>
                     </div>
-                    <div style="background: #EEF7F1; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--green);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--green); margin-bottom: 4px;">En la Fundación</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">Su correcta configuración evita que ciberdelincuentes suplanten el dominio institucional (@fundasecretos.org).</p>
+                    <div class="card-info-box green-border">
+                      <strong class="box-title green"><i class="fa-solid fa-building"></i> En la Fundación</strong>
+                      <p>Su correcta configuración evita que ciberdelincuentes suplanten el dominio institucional (@fundasecretos.org).</p>
                     </div>
-                    <div style="background: #FFFBEB; padding: 10px 14px; border-radius: 10px; border: 1px dashed #FCD34D;">
-                      <p style="margin: 0; font-size: 0.85rem; color: #92400E;">💡 <strong>Tip:</strong> Revisa siempre los encabezados y la dirección real del remitente antes de responder correos con solicitudes urgentes.</p>
+                    <div class="card-tip-box">
+                      <p><i class="fa-regular fa-lightbulb"></i> <strong>Tip:</strong> Revisa siempre los encabezados y la dirección real del remitente antes de responder correos con solicitudes urgentes.</p>
                     </div>
                   </div>
                 </div>
@@ -220,28 +328,28 @@
 
             <!-- Tarjeta 5: Enlaces Anyone -->
             <article class="concept-card">
-              <button type="button" class="concept-toggle">
+              <button type="button" class="concept-toggle" aria-expanded="false">
                 <div class="concept-header-row">
-                  <span class="concept-icon">🔗</span>
+                  <div class="concept-icon"><i class="fa-solid fa-link-slash"></i></div>
                   <span class="concept-badge">Nube</span>
                 </div>
                 <h3 class="card-heading">Enlaces "Anyone" (Cualquier Persona)</h3>
                 <div class="concept-toggle-action">
                   <span class="toggle-text">Ver definición y detalles</span>
-                  <span class="arrow-icon">▾</span>
+                  <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
                 </div>
                 <div class="card-copy">
-                  <div class="card-copy-inner" style="display: grid; gap: 12px; padding-top: 14px;">
-                    <div style="background: #F4F8FA; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--blue);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--blue); margin-bottom: 4px;">¿Qué es?</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">Enlaces compartidos de OneDrive o SharePoint que permiten a cualquiera en internet ver, descargar o editar archivos sin iniciar sesión.</p>
+                  <div class="card-copy-inner">
+                    <div class="card-info-box blue-border">
+                      <strong class="box-title blue"><i class="fa-solid fa-circle-info"></i> ¿Qué es?</strong>
+                      <p>Enlaces compartidos de OneDrive o SharePoint que permiten a cualquiera en internet ver, descargar o editar archivos sin iniciar sesión.</p>
                     </div>
-                    <div style="background: #EEF7F1; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--green);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--green); margin-bottom: 4px;">En la Fundación</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">Representan un riesgo crítico de fuga de información y documentos confidenciales de programas sociales.</p>
+                    <div class="card-info-box green-border">
+                      <strong class="box-title green"><i class="fa-solid fa-building"></i> En la Fundación</strong>
+                      <p>Representan un riesgo crítico de fuga de información y documentos confidenciales de programas sociales.</p>
                     </div>
-                    <div style="background: #FFFBEB; padding: 10px 14px; border-radius: 10px; border: 1px dashed #FCD34D;">
-                      <p style="margin: 0; font-size: 0.85rem; color: #92400E;">💡 <strong>Tip:</strong> Al compartir archivos en la nube, restringe siempre el acceso únicamente a <strong>personas específicas</strong>.</p>
+                    <div class="card-tip-box">
+                      <p><i class="fa-regular fa-lightbulb"></i> <strong>Tip:</strong> Al compartir archivos en la nube, restringe siempre el acceso únicamente a <strong>personas específicas</strong>.</p>
                     </div>
                   </div>
                 </div>
@@ -250,28 +358,28 @@
 
             <!-- Tarjeta 6: OAuth -->
             <article class="concept-card">
-              <button type="button" class="concept-toggle">
+              <button type="button" class="concept-toggle" aria-expanded="false">
                 <div class="concept-header-row">
-                  <span class="concept-icon">⚡</span>
-                  <span class="concept-badge">Alertas</span>
+                  <div class="concept-icon"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+                  <span class="concept-badge">Apps</span>
                 </div>
                 <h3 class="card-heading">OAuth y Permisos de Aplicaciones</h3>
                 <div class="concept-toggle-action">
                   <span class="toggle-text">Ver definición y detalles</span>
-                  <span class="arrow-icon">▾</span>
+                  <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
                 </div>
                 <div class="card-copy">
-                  <div class="card-copy-inner" style="display: grid; gap: 12px; padding-top: 14px;">
-                    <div style="background: #F4F8FA; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--blue);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--blue); margin-bottom: 4px;">¿Qué es?</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">Estándar de conexión que usas al presionar "Iniciar sesión con Microsoft" en una página externa para concederle acceso a tus datos.</p>
+                  <div class="card-copy-inner">
+                    <div class="card-info-box blue-border">
+                      <strong class="box-title blue"><i class="fa-solid fa-circle-info"></i> ¿Qué es?</strong>
+                      <p>Estándar de conexión que usas al presionar "Iniciar sesión con Microsoft" en una página externa para concederle acceso a tus datos.</p>
                     </div>
-                    <div style="background: #EEF7F1; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--green);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--green); margin-bottom: 4px;">En la Fundación</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">Previene ataques donde aplicaciones maliciosas de terceros obtienen control persistente de tu cuenta.</p>
+                    <div class="card-info-box green-border">
+                      <strong class="box-title green"><i class="fa-solid fa-building"></i> En la Fundación</strong>
+                      <p>Previene ataques donde aplicaciones maliciosas de terceros obtienen control persistente de tu cuenta.</p>
                     </div>
-                    <div style="background: #FFFBEB; padding: 10px 14px; border-radius: 10px; border: 1px dashed #FCD34D;">
-                      <p style="margin: 0; font-size: 0.85rem; color: #92400E;">💡 <strong>Tip:</strong> Desconfía de conversores o herramientas en línea gratuitas que exijan iniciar sesión con tu cuenta corporativa.</p>
+                    <div class="card-tip-box">
+                      <p><i class="fa-regular fa-lightbulb"></i> <strong>Tip:</strong> Desconfía de conversores o herramientas en línea gratuitas que exijan iniciar sesión con tu cuenta corporativa.</p>
                     </div>
                   </div>
                 </div>
@@ -280,28 +388,28 @@
 
             <!-- Tarjeta 7: BEC -->
             <article class="concept-card">
-              <button type="button" class="concept-toggle">
+              <button type="button" class="concept-toggle" aria-expanded="false">
                 <div class="concept-header-row">
-                  <span class="concept-icon">🎭</span>
+                  <div class="concept-icon"><i class="fa-solid fa-masks-theater"></i></div>
                   <span class="concept-badge">Fraude</span>
                 </div>
                 <h3 class="card-heading">BEC (Business Email Compromise)</h3>
                 <div class="concept-toggle-action">
                   <span class="toggle-text">Ver definición y detalles</span>
-                  <span class="arrow-icon">▾</span>
+                  <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
                 </div>
                 <div class="card-copy">
-                  <div class="card-copy-inner" style="display: grid; gap: 12px; padding-top: 14px;">
-                    <div style="background: #F4F8FA; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--blue);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--blue); margin-bottom: 4px;">¿Qué es?</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">Ataques sofisticados donde un ciberdelincuente suplanta la identidad de un directivo o proveedor para solicitar pagos urgentes.</p>
+                  <div class="card-copy-inner">
+                    <div class="card-info-box blue-border">
+                      <strong class="box-title blue"><i class="fa-solid fa-circle-info"></i> ¿Qué es?</strong>
+                      <p>Ataques sofisticados donde un ciberdelincuente suplanta la identidad de un directivo o proveedor para solicitar pagos urgentes.</p>
                     </div>
-                    <div style="background: #EEF7F1; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--green);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--green); margin-bottom: 4px;">En la Fundación</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">Busca desviar recursos económicos o apropiarse de información aprovechando la confianza operativa diaria.</p>
+                    <div class="card-info-box green-border">
+                      <strong class="box-title green"><i class="fa-solid fa-building"></i> En la Fundación</strong>
+                      <p>Busca desviar recursos económicos o apropiarse de información aprovechando la confianza operativa diaria.</p>
                     </div>
-                    <div style="background: #FFFBEB; padding: 10px 14px; border-radius: 10px; border: 1px dashed #FCD34D;">
-                      <p style="margin: 0; font-size: 0.85rem; color: #92400E;">💡 <strong>Tip:</strong> Ante solicitudes de pagos, transferencias o cambios de cuentas, verifica siempre por una llamada directa.</p>
+                    <div class="card-tip-box">
+                      <p><i class="fa-regular fa-lightbulb"></i> <strong>Tip:</strong> Ante solicitudes de pagos, transferencias o cambios de cuentas, verifica siempre por una llamada directa.</p>
                     </div>
                   </div>
                 </div>
@@ -310,28 +418,28 @@
 
             <!-- Tarjeta 8: Shadow AI -->
             <article class="concept-card">
-              <button type="button" class="concept-toggle">
+              <button type="button" class="concept-toggle" aria-expanded="false">
                 <div class="concept-header-row">
-                  <span class="concept-icon">🤖</span>
+                  <div class="concept-icon"><i class="fa-solid fa-brain"></i></div>
                   <span class="concept-badge">Uso de IA</span>
                 </div>
                 <h3 class="card-heading">Shadow AI (IA No Autorizada)</h3>
                 <div class="concept-toggle-action">
                   <span class="toggle-text">Ver definición y detalles</span>
-                  <span class="arrow-icon">▾</span>
+                  <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
                 </div>
                 <div class="card-copy">
-                  <div class="card-copy-inner" style="display: grid; gap: 12px; padding-top: 14px;">
-                    <div style="background: #F4F8FA; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--blue);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--blue); margin-bottom: 4px;">¿Qué es?</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">Uso de herramientas de Inteligencia Artificial públicas donde los usuarios cargan documentos internos sin control institucional.</p>
+                  <div class="card-copy-inner">
+                    <div class="card-info-box blue-border">
+                      <strong class="box-title blue"><i class="fa-solid fa-circle-info"></i> ¿Qué es?</strong>
+                      <p>Uso de herramientas de Inteligencia Artificial públicas donde los usuarios cargan documentos internos sin control institucional.</p>
                     </div>
-                    <div style="background: #EEF7F1; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--green);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--green); margin-bottom: 4px;">En la Fundación</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">Expone bases de datos, actas y reportes confidenciales a servidores externos fuera del control de seguridad.</p>
+                    <div class="card-info-box green-border">
+                      <strong class="box-title green"><i class="fa-solid fa-building"></i> En la Fundación</strong>
+                      <p>Expone bases de datos, actas y reportes confidenciales a servidores externos fuera del control de seguridad.</p>
                     </div>
-                    <div style="background: #FFFBEB; padding: 10px 14px; border-radius: 10px; border: 1px dashed #FCD34D;">
-                      <p style="margin: 0; font-size: 0.85rem; color: #92400E;">💡 <strong>Tip:</strong> Utiliza únicamente las plataformas de IA aprobadas y revisadas por el área de sistemas de la Fundación.</p>
+                    <div class="card-tip-box">
+                      <p><i class="fa-regular fa-lightbulb"></i> <strong>Tip:</strong> Utiliza únicamente las plataformas de IA aprobadas y revisadas por el área de sistemas de la Fundación.</p>
                     </div>
                   </div>
                 </div>
@@ -340,28 +448,28 @@
 
             <!-- Tarjeta 9: Vishing / Clonación de voz -->
             <article class="concept-card">
-              <button type="button" class="concept-toggle">
+              <button type="button" class="concept-toggle" aria-expanded="false">
                 <div class="concept-header-row">
-                  <span class="concept-icon">🎙️</span>
+                  <div class="concept-icon"><i class="fa-solid fa-microphone-lines"></i></div>
                   <span class="concept-badge">Vishing</span>
                 </div>
                 <h3 class="card-heading">Clonación de Voz con IA</h3>
                 <div class="concept-toggle-action">
                   <span class="toggle-text">Ver definición y detalles</span>
-                  <span class="arrow-icon">▾</span>
+                  <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
                 </div>
                 <div class="card-copy">
-                  <div class="card-copy-inner" style="display: grid; gap: 12px; padding-top: 14px;">
-                    <div style="background: #F4F8FA; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--blue);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--blue); margin-bottom: 4px;">¿Qué es?</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">Tecnología avanzada que permite imitar con alta precisión la voz de cualquier persona usando pocos segundos de audio.</p>
+                  <div class="card-copy-inner">
+                    <div class="card-info-box blue-border">
+                      <strong class="box-title blue"><i class="fa-solid fa-circle-info"></i> ¿Qué es?</strong>
+                      <p>Tecnología avanzada que permite imitar con alta precisión la voz de cualquier persona usando pocos segundos de audio.</p>
                     </div>
-                    <div style="background: #EEF7F1; padding: 12px 14px; border-radius: 10px; border-left: 3px solid var(--green);">
-                      <strong style="display: block; font-size: 0.78rem; text-transform: uppercase; color: var(--green); margin-bottom: 4px;">En la Fundación</strong>
-                      <p style="margin: 0; font-size: 0.9rem; color: var(--navy);">Puede ser empleada para simular llamadas de emergencia de directivos exigiendo acciones urgentes en campo.</p>
+                    <div class="card-info-box green-border">
+                      <strong class="box-title green"><i class="fa-solid fa-building"></i> En la Fundación</strong>
+                      <p>Puede ser empleada para simular llamadas de emergencia de directivos exigiendo acciones urgentes en campo.</p>
                     </div>
-                    <div style="background: #FFFBEB; padding: 10px 14px; border-radius: 10px; border: 1px dashed #FCD34D;">
-                      <p style="margin: 0; font-size: 0.85rem; color: #92400E;">💡 <strong>Tip:</strong> Establece protocolos de verificación verbal y contraseñas o palabras clave ante solicitudes inusuales.</p>
+                    <div class="card-tip-box">
+                      <p><i class="fa-regular fa-lightbulb"></i> <strong>Tip:</strong> Establece protocolos de verificación verbal y contraseñas o palabras clave ante solicitudes inusuales.</p>
                     </div>
                   </div>
                 </div>
@@ -372,23 +480,29 @@
       </section>
 
       <!-- 5 Riesgos Detectados -->
-      <section>
+      <section class="content-section">
         <div class="section-inner">
-          <h2 class="section-title">Explora los 5 riesgos clave y cómo prevenirlos</h2>
-          <p class="section-lead">Haz clic en cada tarjeta para conocer en detalle la vulnerabilidad detectada, la amenaza real y los protocolos recomendados de protección.</p>
+          <div class="section-header-centered">
+            <span class="section-tag"><i class="fa-solid fa-shield-cat"></i> Análisis de Riesgos</span>
+            <h2 class="section-title">Explora los 5 riesgos clave y cómo prevenirlos</h2>
+            <p class="section-lead">Haz clic en cada tarjeta para conocer en detalle la vulnerabilidad detectada, la amenaza real y los protocolos recomendados de protección.</p>
+          </div>
 
           <div class="risk-list">
             <!-- Riesgo 01 -->
             <article class="risk-card" id="riesgo-01">
               <h3>
-                <button type="button" class="risk-toggle">
+                <button type="button" class="risk-toggle" aria-expanded="false">
                   <span class="risk-number">01</span>
                   <span class="risk-heading">
                     <strong>Ausencia de autenticación multifactor (MFA) obligatoria</strong>
                     <small>Se identificaron cuentas sin un segundo factor de verificación activado.</small>
                   </span>
-                  <span class="risk-signals"><span class="signal signal-danger">!</span><span class="signal signal-safe">✓</span></span>
-                  <span class="chevron"></span>
+                  <span class="risk-signals">
+                    <span class="signal signal-danger" title="Riesgo Crítico"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                    <span class="signal signal-safe" title="Mitigación Disponible"><i class="fa-solid fa-check"></i></span>
+                  </span>
+                  <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
                 </button>
               </h3>
               <div class="risk-panel" aria-hidden="true" inert>
@@ -397,21 +511,21 @@
                     <div class="panel-divider"></div>
                     <div class="finding-grid">
                       <div class="finding">
-                        <span class="block-label" style="color:var(--blue)">Qué se detectó en la auditoría</span>
+                        <span class="block-label blue"><i class="fa-solid fa-magnifying-glass"></i> Qué se detectó en la auditoría</span>
                         <p>Se detectaron cuentas en Entra ID sin reglas que fuercen el uso de segundo factor (MFA) para el 100% de los accesos, además de métodos de autenticación antiguos habilitados.</p>
                       </div>
                       <div class="finding danger">
-                        <span class="block-label" style="color:var(--red)">Por qué es peligroso</span>
+                        <span class="block-label red"><i class="fa-solid fa-fire"></i> Por qué es peligroso</span>
                         <p>Si un ciberdelincuente obtiene tu contraseña mediante correo engañoso (phishing), podrá ingresar inmediatamente a tus correos y documentos sin que el sistema pida verificación adicional.</p>
                       </div>
                     </div>
                     <div class="advice-grid">
                       <div class="advice">
-                        <span class="block-label" style="color:var(--green)">En la Fundación</span>
+                        <span class="block-label green"><i class="fa-solid fa-building"></i> En la Fundación</span>
                         <p>Se recomienda registrar la app <strong>Microsoft Authenticator</strong> en tu celular corporativo y rechazar notificaciones de inicio de sesión no generadas por ti.</p>
                       </div>
                       <div class="advice personal">
-                        <span class="block-label" style="color:var(--blue)">En lo personal</span>
+                        <span class="block-label blue"><i class="fa-solid fa-user-shield"></i> En lo personal</span>
                         <p>Activa la verificación en dos pasos en tu correo personal, redes sociales y aplicaciones bancarias priorizando apps generadoras de códigos en lugar de SMS.</p>
                       </div>
                     </div>
@@ -423,14 +537,17 @@
             <!-- Riesgo 02 -->
             <article class="risk-card" id="riesgo-02">
               <h3>
-                <button type="button" class="risk-toggle">
+                <button type="button" class="risk-toggle" aria-expanded="false">
                   <span class="risk-number">02</span>
                   <span class="risk-heading">
                     <strong>Conexión de aplicaciones web externas no autorizadas (OAuth)</strong>
                     <small>Permisos concedidos a plataformas de terceros para acceder a datos institucionales.</small>
                   </span>
-                  <span class="risk-signals"><span class="signal signal-danger">!</span><span class="signal signal-safe">✓</span></span>
-                  <span class="chevron"></span>
+                  <span class="risk-signals">
+                    <span class="signal signal-danger" title="Riesgo Crítico"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                    <span class="signal signal-safe" title="Mitigación Disponible"><i class="fa-solid fa-check"></i></span>
+                  </span>
+                  <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
                 </button>
               </h3>
               <div class="risk-panel" aria-hidden="true" inert>
@@ -439,21 +556,21 @@
                     <div class="panel-divider"></div>
                     <div class="finding-grid">
                       <div class="finding">
-                        <span class="block-label" style="color:var(--blue)">Qué se detectó en la auditoría</span>
+                        <span class="block-label blue"><i class="fa-solid fa-magnifying-glass"></i> Qué se detectó en la auditoría</span>
                         <p>Existe la posibilidad de vincular aplicaciones externas al iniciar sesión con la cuenta corporativa sin previa validación o aprobación del área de administración.</p>
                       </div>
                       <div class="finding danger">
-                        <span class="block-label" style="color:var(--red)">Por qué es peligroso</span>
+                        <span class="block-label red"><i class="fa-solid fa-fire"></i> Por qué es peligroso</span>
                         <p>Convertidores de PDF a Word o páginas de IA al solicitar "Iniciar sesión con Microsoft" obtienen acceso permanente a tus archivos, el cual se mantiene activo aunque cambies la clave.</p>
                       </div>
                     </div>
                     <div class="advice-grid">
                       <div class="advice">
-                        <span class="block-label" style="color:var(--green)">En la Fundación</span>
+                        <span class="block-label green"><i class="fa-solid fa-building"></i> En la Fundación</span>
                         <p>No autorices ni vincules páginas externas con el correo institucional. Solicita cualquier herramienta digital necesaria formalmente a través del área de administración.</p>
                       </div>
                       <div class="advice personal">
-                        <span class="block-label" style="color:var(--blue)">En lo personal</span>
+                        <span class="block-label blue"><i class="fa-solid fa-user-shield"></i> En lo personal</span>
                         <p>Revisa la configuración de seguridad de tu correo personal (Google, Microsoft) y revoca accesos a sitios web, juegos o apps que ya no utilices.</p>
                       </div>
                     </div>
@@ -465,14 +582,17 @@
             <!-- Riesgo 03 -->
             <article class="risk-card" id="riesgo-03">
               <h3>
-                <button type="button" class="risk-toggle">
+                <button type="button" class="risk-toggle" aria-expanded="false">
                   <span class="risk-number">03</span>
                   <span class="risk-heading">
                     <strong>Riesgo de suplantación de identidad por correo (BEC) y reenvíos</strong>
                     <small>Vulnerabilidad ante correos falsos a nombre de la Fundación y reglas de desvío automático.</small>
                   </span>
-                  <span class="risk-signals"><span class="signal signal-danger">!</span><span class="signal signal-safe">✓</span></span>
-                  <span class="chevron"></span>
+                  <span class="risk-signals">
+                    <span class="signal signal-danger" title="Riesgo Crítico"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                    <span class="signal signal-safe" title="Mitigación Disponible"><i class="fa-solid fa-check"></i></span>
+                  </span>
+                  <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
                 </button>
               </h3>
               <div class="risk-panel" aria-hidden="true" inert>
@@ -481,21 +601,21 @@
                     <div class="panel-divider"></div>
                     <div class="finding-grid">
                       <div class="finding">
-                        <span class="block-label" style="color:var(--blue)">Qué se detectó en la auditoría</span>
+                        <span class="block-label blue"><i class="fa-solid fa-magnifying-glass"></i> Qué se detectó en la auditoría</span>
                         <p>Se identificaron debilidades en la validación de dominios institucionales que permiten la simulación de remitentes y el riesgo de desvío automático de información.</p>
                       </div>
                       <div class="finding danger">
-                        <span class="block-label" style="color:var(--red)">Por qué es peligroso</span>
+                        <span class="block-label red"><i class="fa-solid fa-fire"></i> Por qué es peligroso</span>
                         <p>Un atacante puede enviar un correo falso aparentando ser un directivo o proveedor para solicitar transferencias, pagos urgentes o cambios de cuentas bancarias.</p>
                       </div>
                     </div>
                     <div class="advice-grid">
                       <div class="advice">
-                        <span class="block-label" style="color:var(--green)">En la Fundación</span>
+                        <span class="block-label green"><i class="fa-solid fa-building"></i> En la Fundación</span>
                         <p>No tramites pagos ni ejecutes cambios administrativos guiándote solo por correos o notas. Confirma siempre por una llamada o canal directo validado.</p>
                       </div>
                       <div class="advice personal">
-                        <span class="block-label" style="color:var(--blue)">En lo personal</span>
+                        <span class="block-label blue"><i class="fa-solid fa-user-shield"></i> En lo personal</span>
                         <p>Nunca transfieras dinero ni entregues información personal ante mensajes de texto, correos o WhatsApp sin hablar verbalmente con la persona involucrada.</p>
                       </div>
                     </div>
@@ -507,14 +627,17 @@
             <!-- Riesgo 04 -->
             <article class="risk-card" id="riesgo-04">
               <h3>
-                <button type="button" class="risk-toggle">
+                <button type="button" class="risk-toggle" aria-expanded="false">
                   <span class="risk-number">04</span>
                   <span class="risk-heading">
                     <strong>Exposición de información en SharePoint y OneDrive</strong>
                     <small>Uso de enlaces de acceso anónimo ("Cualquier persona") sin restricciones de tiempo.</small>
                   </span>
-                  <span class="risk-signals"><span class="signal signal-danger">!</span><span class="signal signal-safe">✓</span></span>
-                  <span class="chevron"></span>
+                  <span class="risk-signals">
+                    <span class="signal signal-danger" title="Riesgo Crítico"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                    <span class="signal signal-safe" title="Mitigación Disponible"><i class="fa-solid fa-check"></i></span>
+                  </span>
+                  <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
                 </button>
               </h3>
               <div class="risk-panel" aria-hidden="true" inert>
@@ -523,21 +646,21 @@
                     <div class="panel-divider"></div>
                     <div class="finding-grid">
                       <div class="finding">
-                        <span class="block-label" style="color:var(--blue)">Qué se detectó en la auditoría</span>
+                        <span class="block-label blue"><i class="fa-solid fa-magnifying-glass"></i> Qué se detectó en la auditoría</span>
                         <p>La configuración predeterminada permite crear enlaces abiertos a cualquiera en internet sin caducidad obligatoria y con permisos directos de edición.</p>
                       </div>
                       <div class="finding danger">
-                        <span class="block-label" style="color:var(--red)">Por qué es peligroso</span>
+                        <span class="block-label red"><i class="fa-solid fa-fire"></i> Por qué es peligroso</span>
                         <p>Documentos institucionales o bases de datos compartidos de forma pública pueden terminar expuestos en buscadores o en manos no autorizadas.</p>
                       </div>
                     </div>
                     <div class="advice-grid">
                       <div class="advice">
-                        <span class="block-label" style="color:var(--green)">En la Fundación</span>
+                        <span class="block-label green"><i class="fa-solid fa-building"></i> En la Fundación</span>
                         <p>Evita usar herramientas públicas de edición web. Al compartir en OneDrive, otorga acceso únicamente a <strong>personas específicas</strong>.</p>
                       </div>
                       <div class="advice personal">
-                        <span class="block-label" style="color:var(--blue)">En lo personal</span>
+                        <span class="block-label blue"><i class="fa-solid fa-user-shield"></i> En lo personal</span>
                         <p>No subas fotos de tu cédula, contratos o extractos bancarios a convertidores o páginas gratuitas de compresión de archivos.</p>
                       </div>
                     </div>
@@ -549,14 +672,17 @@
             <!-- Riesgo 05 -->
             <article class="risk-card" id="riesgo-05">
               <h3>
-                <button type="button" class="risk-toggle">
+                <button type="button" class="risk-toggle" aria-expanded="false">
                   <span class="risk-number">05</span>
                   <span class="risk-heading">
                     <strong>Amenazas sofisticadas y Clonación de Voz con Inteligencia Artificial</strong>
                     <small>Ataques que combinan enlaces engañosos con audios sintéticos generados por IA.</small>
                   </span>
-                  <span class="risk-signals"><span class="signal signal-danger">!</span><span class="signal signal-safe">✓</span></span>
-                  <span class="chevron"></span>
+                  <span class="risk-signals">
+                    <span class="signal signal-danger" title="Riesgo Crítico"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                    <span class="signal signal-safe" title="Mitigación Disponible"><i class="fa-solid fa-check"></i></span>
+                  </span>
+                  <span class="chevron"><i class="fa-solid fa-chevron-down"></i></span>
                 </button>
               </h3>
               <div class="risk-panel" aria-hidden="true" inert>
@@ -565,21 +691,21 @@
                     <div class="panel-divider"></div>
                     <div class="finding-grid">
                       <div class="finding">
-                        <span class="block-label" style="color:var(--blue)">Qué se detectó en la auditoría</span>
+                        <span class="block-label blue"><i class="fa-solid fa-magnifying-glass"></i> Qué se detectó en la auditoría</span>
                         <p>Desactivación de ciertas alertas automáticas de seguridad ante enlaces sospechosos y el surgimiento de nuevas técnicas de suplantación digital.</p>
                       </div>
                       <div class="finding danger">
-                        <span class="block-label" style="color:var(--red)">Por qué es peligroso</span>
+                        <span class="block-label red"><i class="fa-solid fa-fire"></i> Por qué es peligroso</span>
                         <p>Herramientas de IA actuales pueden clonar la voz de un compañero o directivo con pocos segundos de audio para solicitar acciones inmediatas o de urgencia en campo.</p>
                       </div>
                     </div>
                     <div class="advice-grid">
                       <div class="advice">
-                        <span class="block-label" style="color:var(--green)">En la Fundación</span>
+                        <span class="block-label green"><i class="fa-solid fa-building"></i> En la Fundación</span>
                         <p>La voz por sí sola no es suficiente prueba de identidad. Confirma cualquier orden inusual mediante protocolos o canales institucionales preestablecidos.</p>
                       </div>
                       <div class="advice personal">
-                        <span class="block-label" style="color:var(--blue)">En lo personal</span>
+                        <span class="block-label blue"><i class="fa-solid fa-user-shield"></i> En lo personal</span>
                         <p>Define una "palabra clave" con tu familia para verificar emergencias antes de realizar transferencias o envíos de dinero imprevistos.</p>
                       </div>
                     </div>
@@ -591,11 +717,14 @@
           </div>
 
           <!-- Diagnóstico de Seguridad Personal (Microsoft Forms) -->
-          <div class="checklist-section">
+          <div id="diagnostico-forms" class="checklist-section">
             <div class="checklist-header">
-              <h3 class="checklist-title">Tu Diagnóstico de Seguridad Personal</h3>
+              <div>
+                <span class="section-tag"><i class="fa-brands fa-microsoft"></i> Evaluación Interactiva</span>
+                <h3 class="checklist-title">Tu Diagnóstico de Seguridad Personal</h3>
+              </div>
             </div>
-            <p class="section-lead" style="margin-bottom: 20px;">Responde este breve formulario para evaluar tus conocimientos sobre los protocolos de ciberseguridad de la Fundación:</p>
+            <p class="section-lead" style="margin-bottom: 20px;">Responde este breve formulario integrado para evaluar tus conocimientos sobre los protocolos de ciberseguridad de la Fundación:</p>
 
             <div class="forms-container">
               <iframe 
@@ -615,19 +744,54 @@
         </div>
       </section>
 
-      <!-- Conclusión y Cierre Institucional -->
-      <section class="section-inner" style="padding-top: 10px; padding-bottom: 40px;">
-        <div style="background: linear-gradient(135deg, var(--navy), var(--blue)); color: #fff; border-radius: 20px; padding: 36px 40px; box-shadow: 0 8px 24px rgba(15,44,76,.12);">
-          <h3 style="font-family: 'Fraunces', serif; font-size: 1.5rem; margin-top: 0; margin-bottom: 12px; color: #fff;">La ciberseguridad la construimos juntos</h3>
-          <p style="margin: 0; font-size: 0.98rem; line-height: 1.6; opacity: 0.95;">
-            La ciberseguridad la construimos entre todos. Adoptar hábitos digitales seguros en nuestro día a día no solo protege la información de la <strong>Fundación Secretos para Contar</strong> y la continuidad de nuestros programas sociales, sino que también cuida nuestra tranquilidad personal y la de nuestras familias.
-          </p>
+      <!-- Conclusión y Cierre Institucional con Buzón de Sugerencias -->
+      <section class="section-inner" style="padding-top: 10px; padding-bottom: 60px;">
+        <div class="closing-banner-modern">
+          <div class="closing-banner-glow"></div>
+          <div class="closing-content">
+            <div class="closing-badge"><i class="fa-solid fa-shield-heart"></i> Compromiso Institucional</div>
+            <h3 class="closing-title-mod">La ciberseguridad la construimos juntos</h3>
+            <p class="closing-desc-mod">
+              Adoptar hábitos digitales seguros en nuestro día a día no solo protege la información de la <strong>Fundación Secretos para Contar</strong> y la continuidad de nuestros programas sociales, sino que también cuida nuestra tranquilidad personal y la de nuestras familias.
+            </p>
+
+            <!-- Buzón de Sugerencias (Soporte completo para script.js existente) -->
+            <div class="suggestion-block">
+              <h4 class="suggestion-subtitle"><i class="fa-solid fa-comments"></i> Buzón de Aportes y Sugerencias</h4>
+              <p class="suggestion-desc">¿Tienes alguna duda, propuesta o reporte sobre seguridad? Compártelo con el equipo administrativo.</p>
+              
+              <form id="suggestion-form" class="suggestion-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="sug-name">Nombre (Opcional)</label>
+                    <input type="text" id="sug-name" class="form-input" placeholder="Tu nombre o anónimo">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="sug-area">Área o Programa</label>
+                    <input type="text" id="sug-area" class="form-input" placeholder="Ej. Sistemas, Pedagogía, Administrativa">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="sug-text">Tu Comentario o Sugerencia *</label>
+                  <textarea id="sug-text" class="form-textarea" placeholder="Escribe aquí tu observación..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                  <i class="fa-solid fa-paper-plane"></i> Enviar Sugerencia
+                </button>
+              </form>
+              <div id="form-feedback" class="form-feedback-alert" style="display:none;"></div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
+    <!-- Footer Institucional -->
     <footer class="site-footer">
-      <p>© 2026 Fundación Secretos para Contar</p>
+      <div class="footer-inner">
+        <p>&copy; 2026 Fundación Secretos para Contar &bull; Todos los derechos reservados.</p>
+        <p class="footer-sub">Arquitectura de Ciberseguridad &bull; Microsoft 365 Enterprise Defense</p>
+      </div>
     </footer>
   </div>
 
