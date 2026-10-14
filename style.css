@@ -94,8 +94,7 @@ body {
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 .brand-text { display: flex; flex-direction: column; }
-.brand-org { font-size: 0.85rem; font-weight: 700; color: var(--text); }
-.brand-product { font-size: 0.72rem; font-weight: 600; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; }
+.brand-org { font-size: 0.95rem; font-weight: 700; color: var(--text); }
 
 .header-actions { display: flex; align-items: center; gap: 12px; }
 .theme-toggle-btn { 
@@ -177,7 +176,7 @@ body {
   color: #fff; 
 }
 .hero-subtitle { margin: 0 0 12px; font-size: 1.05rem; font-weight: 600; color: #93C5FD; }
-.hero-intro { margin: 0 0 32px; font-size: 0.950rem; line-height: 1.6; color: #CBD5E1; max-width: 600px; }
+.hero-intro { margin: 0 0 32px; font-size: 0.95rem; line-height: 1.6; color: #CBD5E1; max-width: 600px; }
 .hero-btn-group { display: flex; gap: 16px; flex-wrap: wrap; }
 
 .btn-primary-tech { 
@@ -421,7 +420,7 @@ body {
 .card-heading { font-family: 'Fraunces', serif; font-weight: 700; margin: 0 0 12px; color: var(--text); font-size: 1.2rem; }
 .card-copy { margin: 0; line-height: 1.65; color: var(--muted); font-size: 0.95rem; }
 
-/* Sección de Conceptos Clave (Glassmorphism & Clean Cards) */
+/* Sección de Conceptos Clave */
 .concepts-section { background: var(--pale); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); }
 .concept-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .concept-card { 
@@ -476,7 +475,7 @@ body {
 .card-tip-box { background: rgba(245, 158, 11, 0.08); border: 1px dashed rgba(245, 158, 11, 0.4); padding: 12px 14px; border-radius: 10px; font-size: 0.85rem; color: var(--warning); line-height: 1.5; }
 .card-tip-box p { margin: 0; }
 
-/* Lista de Riesgos (Estilo Microsoft Defender Security Alerts) */
+/* Lista de Riesgos */
 .risk-list { display: grid; gap: 20px; margin-top: 30px; }
 .risk-card { background: var(--surface); border: 1px solid var(--card-border); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-sm); transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s; }
 .risk-card:hover { border-color: var(--card-hover-border); box-shadow: var(--shadow-md); transform: translateY(-2px); }
@@ -522,7 +521,7 @@ body {
   margin-top: 20px;
 }
 
-/* Bloque Final: Cierre y Buzón de Sugerencias */
+/* Bloque Final: Cierre Institucional */
 .closing-banner-modern {
   position: relative;
   background: var(--hero-bg);
@@ -554,29 +553,12 @@ body {
   margin-bottom: 20px;
 }
 .closing-title-mod { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 2.5vw, 2.3rem); margin: 0 0 16px; color: #fff; }
-.closing-desc-mod { max-width: 800px; line-height: 1.7; margin: 0 0 36px; opacity: 0.95; font-size: 1.05rem; color: #CBD5E1; }
-
-.suggestion-block { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 20px; padding: 32px; backdrop-filter: blur(12px); }
-.suggestion-subtitle { font-family: 'Fraunces', serif; font-size: 1.35rem; margin: 0 0 8px; color: #fff; display: flex; align-items: center; gap: 10px; }
-.suggestion-subtitle i { color: #60A5FA; }
-.suggestion-desc { margin: 0 0 24px; font-size: 0.92rem; opacity: 0.85; line-height: 1.6; color: #94A3B8; }
-.suggestion-form { display: grid; gap: 18px; }
-.form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-.form-group { display: flex; flex-direction: column; gap: 8px; }
-.form-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #93C5FD; }
-.form-input, .form-textarea { width: 100%; border: 1px solid rgba(255, 255, 255, 0.25); background: rgba(15, 23, 42, 0.6); color: #fff; border-radius: 12px; padding: 14px 18px; font-family: inherit; font-size: 0.95rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
-.form-input::placeholder, .form-textarea::placeholder { color: #64748B; }
-.form-input:focus, .form-textarea:focus { border-color: #3B82F6; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3); background: rgba(15, 23, 42, 0.9); }
-.form-textarea { resize: vertical; min-height: 100px; }
-.submit-btn { justify-self: start; display: inline-flex; align-items: center; gap: 10px; border: 0; border-radius: 12px; background: #3B82F6; color: #fff; padding: 14px 28px; font-weight: 800; font-size: 0.95rem; cursor: pointer; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4); }
-.submit-btn:hover { background: #2563EB; transform: translateY(-2px); box-shadow: 0 12px 28px rgba(59, 130, 246, 0.6); }
-.form-feedback-alert { margin-top: 18px; padding: 16px 20px; border-radius: 12px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #34D399; font-size: 0.95rem; line-height: 1.5; }
+.closing-desc-mod { max-width: 800px; line-height: 1.7; margin: 0; opacity: 0.95; font-size: 1.05rem; color: #CBD5E1; }
 
 /* Footer Institucional */
 .site-footer { text-align: center; padding: 35px 16px; border-top: 1px solid var(--card-border); color: var(--muted); font-size: 0.88rem; background: var(--surface); }
 .footer-inner { max-width: 1200px; margin: auto; display: flex; flex-direction: column; gap: 6px; }
 .site-footer p { margin: 0; }
-.footer-sub { font-size: 0.78rem; opacity: 0.8; }
 
 /* Responsive Media Queries */
 @media(max-width: 960px){
@@ -596,7 +578,6 @@ body {
   .panel-content { padding: 0 16px 24px; }
   .finding-grid, .advice-grid { grid-template-columns: 1fr; gap: 14px; }
   .closing-banner-modern { padding: 32px 20px; }
-  .form-row { grid-template-columns: 1fr; }
   .checklist-section { padding: 24px 18px; }
   .metric-detail-grid { grid-template-columns: 1fr; }
   .metric-detail-panel { padding: 20px 18px; }
