@@ -1,5 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
   
+  // 0. Lógica de Dark Mode (Modo Oscuro) con persistencia en localStorage
+  var themeToggleBtn = document.getElementById('theme-toggle');
+  var htmlElement = document.documentElement;
+
+  // Cargar tema guardado previamente
+  var savedTheme = localStorage.getItem('fsc_theme') || 'light';
+  htmlElement.setAttribute('data-theme', savedTheme);
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', function() {
+      var currentTheme = htmlElement.getAttribute('data-theme');
+      var newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      htmlElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('fsc_theme', newTheme);
+    });
+  }
+
   // 1. Lógica interactiva para las tarjetas de Métricas del Diagnóstico
   var metricCards = document.querySelectorAll('.metric-card');
   var detailPanel = document.getElementById('metric-detail-panel');
@@ -52,6 +70,9 @@ document.addEventListener('DOMContentLoaded', function() {
         detailFinding.textContent = data.finding;
         detailPanel.style.display = 'block';
         currentMetric = key;
+        
+        // Scroll suave hacia el panel de detalle
+        detailPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     });
   });
@@ -76,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.setAttribute('aria-expanded', isOpen);
         var toggleText = card.querySelector('.toggle-text');
         if (toggleText) {
-          toggleText.textContent = isOpen ? 'Ocultar definición' : 'Ver definición';
+          toggleText.textContent = isOpen ? 'Ocultar definición' : 'Ver definición y detalles';
         }
       });
     }
@@ -131,7 +152,11 @@ document.addEventListener('DOMContentLoaded', function() {
       sugForm.reset();
       if (sugFeedback) {
         sugFeedback.style.display = 'block';
-        sugFeedback.innerHTML = '<strong>¡Gracias por tu aporte!</strong> Tu sugerencia ha sido registrada exitosamente. El área de administración revisará tus comentarios para seguir mejorando nuestras políticas.';
+        sugFeedback.innerHTML = '<i class="fa-solid fa-circle-check"></i> <strong>¡Gracias por tu aporte!</strong> Tu sugerencia ha sido registrada exitosamente. El área de administración revisará tus comentarios para seguir mejorando nuestras políticas.';
+        
+        setTimeout(function() {
+          sugFeedback.style.display = 'none';
+        }, 8000);
       }
     });
   }
