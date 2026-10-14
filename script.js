@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var themeToggleBtn = document.getElementById('theme-toggle');
   var htmlElement = document.documentElement;
 
-  // Cargar tema guardado previamente
   var savedTheme = localStorage.getItem('fsc_theme') || 'light';
   htmlElement.setAttribute('data-theme', savedTheme);
 
@@ -71,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
         detailPanel.style.display = 'block';
         currentMetric = key;
         
-        // Scroll suave hacia el panel de detalle
         detailPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     });
@@ -121,43 +119,4 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
-
-  // 4. Lógica interactiva del Buzón de Sugerencias (Almacenamiento Local)
-  var sugForm = document.getElementById('suggestion-form');
-  var sugFeedback = document.getElementById('form-feedback');
-
-  if (sugForm) {
-    sugForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      var nameVal = document.getElementById('sug-name').value.trim();
-      var areaVal = document.getElementById('sug-area').value.trim();
-      var textVal = document.getElementById('sug-text').value.trim();
-
-      if (textVal === '') return;
-
-      try {
-        var storedList = JSON.parse(localStorage.getItem('fsc_suggestions_data') || '[]');
-        storedList.push({
-          nombre: nameVal || 'Anónimo',
-          area: areaVal || 'No especificada',
-          comentario: textVal,
-          fecha: new Date().toLocaleString('es-CO')
-        });
-        localStorage.setItem('fsc_suggestions_data', JSON.stringify(storedList));
-      } catch(err) {
-        console.log('Error de almacenamiento local:', err);
-      }
-
-      sugForm.reset();
-      if (sugFeedback) {
-        sugFeedback.style.display = 'block';
-        sugFeedback.innerHTML = '<i class="fa-solid fa-circle-check"></i> <strong>¡Gracias por tu aporte!</strong> Tu sugerencia ha sido registrada exitosamente. El área de administración revisará tus comentarios para seguir mejorando nuestras políticas.';
-        
-        setTimeout(function() {
-          sugFeedback.style.display = 'none';
-        }, 8000);
-      }
-    });
-  }
 });
